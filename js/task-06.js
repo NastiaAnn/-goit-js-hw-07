@@ -5,10 +5,11 @@ inputEl.addEventListener('blur', handleAmountOfNumberValidation);
 function handleAmountOfNumberValidation(event) {
   const writtenElements = event.target.value.trim();
   const inputDataLength = Number(event.target.getAttribute('data-length'));
-  if (writtenElements.length <= inputDataLength) {
-    event.target.classList.add('valid');
+  if (writtenElements.length === Number(event.target.getAttribute('data-length'))) {
+    event.currentTarget.classList.remove('invalid');
+    event.currentTarget.classList.add('valid');
     return;
   } else {
-    event.target.classList.replace('valid', 'invalid');
+    event.currentTarget.classList.add('invalid');
   }
 }
