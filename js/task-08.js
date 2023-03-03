@@ -14,7 +14,8 @@ function handleFormSubmit(event) {
       Email: `${emailEl}`,
       Password: `${passwordEl}`,
     };
-    return console.log(inputValue);
+    console.log(inputValue);
     event.currentTarget.reset();
+    return;
   }
 }
